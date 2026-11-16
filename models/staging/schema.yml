@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_contracts
+    description: "Capa Staging 1:1 de contratos anonimizados y deduplicados."
+    columns:
+      - name: contract_id
+        tests:
+          - unique
+          - not_null
+      - name: client_hash_id
+        tests:
+          - not_null
+      - name: contract_status
+        tests:
+          - accepted_values:
+              values: ['active', 'completed', 'ended', 'paused', 'closed']
+
+  - name: stg_earnings
+    description: "Capa Staging 1:1 de ingresos parseados."
+    columns:
+      - name: earning_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_transactions
+    description: "Capa Staging 1:1 de transacciones operativas."
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null

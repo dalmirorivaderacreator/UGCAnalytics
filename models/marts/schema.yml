@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_upwork_performance
+    description: "Tabla de hechos consolidada con el rendimiento de contratos de Upwork, volumen de transacciones e ingresos reales, utilizando identificadores de clientes anonimizados (PII masking)."
+    columns:
+      - name: contract_id
+        description: "Identificador único del contrato en Upwork."
+        tests:
+          - unique
+          - not_null
+
+      - name: client_hash_id
+        description: "Identificador del cliente enmascarado mediante hash MD5 para garantizar privacidad y cumplimiento de PII."
+        tests:
+          - not_null
+
+      - name: start_date
+        description: "Fecha de inicio del contrato."
+
+      - name: contract_status
+        description: "Estado actual del contrato normalizado (active, completed, paused, etc.)."
+
+      - name: agreed_amount
+        description: "Monto total acordado o precio fijo del contrato."
+
+      - name: transaction_amount
+        description: "Suma total de los montos transaccionados asociados al contrato."
+
+      - name: transaction_count
+        description: "Cantidad total de transacciones registradas para el contrato."
+
+      - name: earned_amount
+        description: "Ingresos netos totales obtenidos a partir de las ganancias reportadas."
