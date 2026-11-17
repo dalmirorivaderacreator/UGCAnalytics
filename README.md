@@ -12,7 +12,7 @@ Resolves manual reporting bottlenecks, metric ambiguity, and PII privacy gaps by
 ## 🚀 Quickstart
 1. Clone repository and set up virtual environment:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/dalmirorivaderacreator/ugc_analitica_analytics.git
    cd ugc_analitica_analytics
    python3 -m venv venv && source venv/bin/activate
    pip install dbt-duckdb
