@@ -21,3 +21,6 @@ Resolves manual reporting bottlenecks, metric ambiguity, and PII privacy gaps by
    ```bash
    dbt build
    ```
+
+## 🖼️ Executive Dashboard Preview
+![Power BI Dashboard Preview](assets/dashboard_preview.png)
