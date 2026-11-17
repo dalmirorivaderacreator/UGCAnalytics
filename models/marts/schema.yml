@@ -2,33 +2,42 @@ version: 2
 
 models:
   - name: fct_upwork_performance
-    description: "Tabla de hechos consolidada con el rendimiento de contratos de Upwork, volumen de transacciones e ingresos reales, utilizando identificadores de clientes anonimizados (PII masking)."
+    description: "Fact table at contract grain consolidating agreed, transacted, and earned amounts."
     columns:
       - name: contract_id
-        description: "Identificador único del contrato en Upwork."
+        tests:
+          - unique
+          - not_null
+      - name: client_hash_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clients')
+                field: client_hash_id
+      - name: start_date
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_dates')
+                field: date_day
+      - name: agreed_amount
+        tests:
+          - not_null
+
+  - name: dim_clients
+    description: "Client dimension derived from anonymized Upwork contact records."
+    columns:
+      - name: client_hash_id
         tests:
           - unique
           - not_null
 
-      - name: client_hash_id
-        description: "Identificador del cliente enmascarado mediante hash MD5 para garantizar privacidad y cumplimiento de PII."
+  - name: dim_dates
+    description: "Continuous daily calendar dimension for time-intelligence reporting."
+    columns:
+      - name: date_day
         tests:
+          - unique
           - not_null
-
-      - name: start_date
-        description: "Fecha de inicio del contrato."
-
-      - name: contract_status
-        description: "Estado actual del contrato normalizado (active, completed, paused, etc.)."
-
-      - name: agreed_amount
-        description: "Monto total acordado o precio fijo del contrato."
-
-      - name: transaction_amount
-        description: "Suma total de los montos transaccionados asociados al contrato."
-
-      - name: transaction_count
-        description: "Cantidad total de transacciones registradas para el contrato."
-
-      - name: earned_amount
-        description: "Ingresos netos totales obtenidos a partir de las ganancias reportadas."
