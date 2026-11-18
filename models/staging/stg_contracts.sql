@@ -16,9 +16,14 @@ dedup as (
 
 select
     cast("Contract ID" as varchar) as contract_id,
-    md5(coalesce(trim(cast("Contact person" as varchar)), 'UNKNOWN_CLIENT')) as client_hash_id,
+    {{ hash_pii('"Contact person"') }} as client_hash_id,
     cast("Start Date" as date) as start_date,
     cast(coalesce("Fixed Price Amount Agreed", 0) as decimal(10,2)) as total_amount,
-    lower(trim(cast("Status" as varchar))) as contract_status
+    case
+        when lower(trim(cast("Status" as varchar))) in ('ended', 'completed') then 'Completed'
+        when lower(trim(cast("Status" as varchar))) = 'active' then 'Active'
+        when lower(trim(cast("Status" as varchar))) = 'paused' then 'Paused'
+        else 'Closed'
+    end as contract_status
 from dedup
 where rn = 1

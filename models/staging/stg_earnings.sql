@@ -15,9 +15,13 @@ dedup as (
 )
 
 select
-    md5(cast("Client" as varchar) || '-' || cast("Job name" as varchar)) as earning_id,
+    md5(
+        lower(trim(cast("Client" as varchar))) || '-' || 
+        lower(trim(cast("Job name" as varchar)))
+    ) as earning_id,
+    {{ hash_pii('"Client"') }} as client_hash_id,
     null as contract_id,
     cast(coalesce("Your earnings", 0) as decimal(10,2)) as amount,
-    current_date as earning_date
+    cast('{{ run_started_at.strftime("%Y-%m-%d") }}' as date) as earning_date
 from dedup
 where rn = 1

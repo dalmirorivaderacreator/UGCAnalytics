@@ -14,7 +14,7 @@ models:
       - name: contract_status
         tests:
           - accepted_values:
-              values: ['active', 'completed', 'ended', 'paused', 'closed']
+              values: ['Active', 'Completed', 'Paused', 'Closed']
 
   - name: stg_earnings
     description: "Capa Staging 1:1 de ingresos parseados."

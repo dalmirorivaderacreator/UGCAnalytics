@@ -1,10 +1,11 @@
 {{ config(materialized='table') }}
 
-SELECT
+select
     client_hash_id,
-    MIN(start_date) AS first_contract_date,
-    MAX(start_date) AS last_contract_date,
-    COUNT(DISTINCT contract_id) AS total_contracts
-FROM {{ ref('stg_contracts') }}
-WHERE client_hash_id IS NOT NULL
-GROUP BY 1
+    left(client_hash_id, 8) as client_short_id,
+    min(start_date) as first_contract_date,
+    max(start_date) as last_contract_date,
+    count(distinct contract_id) as total_contracts
+from {{ ref('stg_contracts') }}
+where client_hash_id is not null
+group by 1, 2
