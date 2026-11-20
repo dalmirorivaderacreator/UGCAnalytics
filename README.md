@@ -35,7 +35,10 @@ Resolves manual reporting bottlenecks, metric ambiguity, and PII privacy gaps by
    ```bash
    export DBT_PII_SALT="choose-a-long-random-value"
    ```
-3. Build models, snapshots, and run all 19 tests:
+3. Provide your own data and connection (not included in this repo for privacy):
+   - Place your Upwork exports at `../data/raw/contracts.csv`, `../data/raw/earnings.csv` and `../data/raw/transactions.csv` (one level above the project folder).
+   - Create a `ugc_analitica` profile in `~/.dbt/profiles.yml` pointing to a DuckDB file.
+4. Build models, snapshots, and run all 19 tests:
    ```bash
    dbt build
    ```
