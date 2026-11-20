@@ -5,3 +5,9 @@ logs/
 *.duckdb
 *.duckdb.wal
 __pycache__/
+
+# Power BI files embed the data model (may contain real data)
+*.pbix
+
+# Raw data exports
+data/raw/
