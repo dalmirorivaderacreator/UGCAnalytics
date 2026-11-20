@@ -1,366 +1,192 @@
-# UGCAnalitica
+# Phase 1 — Business Analysis: Upwork Acquisition & Conversion Funnel
 
-## ¿Qué es esto?
+## What is this?
 
-**UGCAnalitica** es mi primer proyecto real de análisis de datos, realizado con **datos reales y para un cliente real**: un freelancer de Upwork especializado en contenido UGC.
+This was my first real data analysis project, built on **real data for a real client**: an Upwork freelancer specialized in UGC (user-generated content).
 
-El objetivo del proyecto es utilizar datos de la plataforma para entender qué factores influyen en la **visibilidad, generación de oportunidades y conversión de contratos**, y transformar esos datos en decisiones accionables.
+The goal was to use the platform's data to understand which factors drive **profile visibility, opportunity generation and contract conversion**, and to turn that data into actionable decisions.
 
-Este proyecto representa mi primer acercamiento práctico al análisis de datos. Por eso, antes de enfocarme en dominar herramientas técnicas, decidí concentrarme en una pregunta más fundamental:
+Before focusing on technical tools, I wanted to answer a more fundamental question:
 
-> **¿Cómo piensa un analista de datos y cómo genera valor a partir de los datos?**
+> **How does a data analyst think, and how do they create value from data?**
 
-El proyecto sigue un proceso iterativo:
+The project follows an iterative process:
 
-**Problema → Pregunta → Hipótesis → Datos → Análisis → Insight → Decisión**
+**Problem → Question → Hypothesis → Data → Analysis → Insight → Decision**
 
----
-
-# Análisis realizados
-
-## 1. Impacto de la Availability Badge de Upwork
-
-### Problema
-
-El cliente experimentó una caída en las visitas y contratos de su perfil y necesitaba entender si la **Availability Badge** podía estar relacionada con su rendimiento.
-
-### Método
-
-- Comparación entre períodos con la Badge activada y desactivada.
-- Análisis de **Profile Views** y contratos obtenidos.
-- Cálculo de tasa de conversión:
-
-**Tasa de conversión = Contratos / Visitas al perfil**
-
-- Contraste con documentación oficial de Upwork.
-
-### Resultado inicial
-
-- Con Badge activa: hasta **5 contratos mensuales** en el período inicial analizado.
-- Sin Badge: **1 contrato**.
-- La documentación de Upwork indica que los clientes pueden utilizar la disponibilidad como criterio para encontrar freelancers.
-
-### Conclusión
-
-Los datos iniciales mostraron una **asociación entre la activación de la Availability Badge y un mayor volumen de contratos**.
-
-Esto llevó a plantear la Badge como un elemento importante dentro de la estrategia de visibilidad y disponibilidad del perfil.
-
-### Recomendación
-
-Mantener la Availability Badge activa y combinarla con una estrategia de optimización del perfil.
-
-📄 **Archivo:** [PDF - Análisis de Badge y vistas al perfil](https://github.com/user-attachments/files/27981813/BADGE_Y_VISTAS_AL_PERFIL_GITHUB.pdf)
-
-🎥 **Video resumen:** [LinkedIn](https://www.linkedin.com/posts/dalmiro-rivadera-847854384_consegu%C3%AD-mi-primer-cliente-un-freelancer-ugcPost-7462303425741955072-jU28)
+> **Privacy note:** the client is not named, and no raw client data is published in this repository. Only aggregated metrics are shown.
 
 ---
 
-# 2. Propuestas y tasa de conversión — Identificación del cuello de botella
+## 1. Impact of Upwork's Availability Badge
 
-### Problema
+### Problem
 
-El cliente tenía la Badge activa, recibía visitas al perfil y sus propuestas eran vistas, pero no todas se convertían en contratos.
+The client saw a drop in profile views and contracts and needed to know whether the **Availability Badge** was related to that performance.
 
-La pregunta fue:
+### Method
 
-> **¿El problema está en conseguir visibilidad o en convertir esa visibilidad en una respuesta del cliente?**
+- Compared periods with the Badge turned on vs. off.
+- Analyzed **Profile Views** and contracts won.
+- Calculated the conversion rate: **Conversion Rate = Contracts / Profile Views**
+- Cross-checked against Upwork's official documentation.
 
-### Método
+### Initial result
 
-Se analizaron manualmente **103 propuestas** desde la interfaz de Upwork:
+- Badge on: up to **5 contracts per month** in the initial period.
+- Badge off: **1 contract**.
+- Upwork's documentation states that clients can use availability as a filter when searching for freelancers.
 
-- **94** propuestas archivadas.
-- **9** propuestas activas.
-- Cálculo de tasa de éxito.
-- Cálculo del porcentaje de propuestas vistas sin respuesta.
-- Comparación con benchmarks publicados por fuentes de la industria.
+### Conclusion & recommendation
 
-### Resultados
-
-- Tasa de éxito: **6,4%**.
-- Propuestas activas vistas sin respuesta: **33%**.
-- Benchmark de visualización reportado: **12–17%**.
-- El **33%** observado se encontraba por encima de ese rango de referencia.
-
-### Interpretación
-
-El análisis sugirió que el principal problema no era únicamente la visibilidad.
-
-Las propuestas estaban llegando a clientes y siendo vistas, por lo que el siguiente punto a investigar era la **conversión posterior a la visualización**.
-
-Esto llevó a plantear una nueva hipótesis:
-
-> **¿Un video personalizado podría mejorar la respuesta de los clientes?**
-
-### Recomendación inicial
-
-Experimentar con videos personalizados de **30–60 segundos**, adaptados al contexto de cada cliente, como alternativa a propuestas exclusivamente textuales.
-
-📄 **Archivo:** [PDF - Análisis de propuestas y conversión](https://github.com/user-attachments/files/28291470/INSIGHT_PROPUESTAS_CONVERSION.pdf)
-
-🎥 **Video resumen:** [LinkedIn](https://www.linkedin.com/posts/dalmiro-rivadera-847854384_dataanalytics-upwork-freelancer-ugcPost-7465391928034029568-PGQ7/)
+The initial data showed an **association between turning on the Availability Badge and a higher volume of contracts**. Recommendation: keep the Badge on and combine it with a profile optimization strategy.
 
 ---
 
-# 3. Availability Badge + Profile Boost — Del tráfico a la conversión
+## 2. Proposals & Conversion Rate — Finding the Bottleneck
 
-### Problema
+### Problem
 
-Después de analizar la visibilidad del perfil y el rendimiento de las propuestas, surgió una nueva pregunta:
+The client had the Badge on, was getting profile views, and proposals were being viewed — but not all of them turned into contracts.
 
-> **¿Cómo interactúan las herramientas de adquisición de Upwork con la generación de contratos?**
+> **Was the problem getting visibility, or converting that visibility into a client response?**
 
-El objetivo fue analizar conjuntamente la **Availability Badge** y el **Profile Boost**, diferenciando entre exposición, visitas y conversiones.
+### Method
 
-### Métricas analizadas
+**103 proposals** were analyzed manually from the Upwork interface (94 archived, 9 active):
 
-**Profile Views**
+- Success rate.
+- Share of proposals viewed but not answered.
+- Comparison against industry benchmarks.
 
-Cantidad de personas que ingresaron y revisaron el perfil. Incluye tráfico orgánico y visitas generadas cuando el perfil está destacado.
+### Results
 
-**Invitations**
+- Success rate: **6.4%**.
+- Active proposals viewed without a reply: **33%**.
+- Reported benchmark for viewed proposals: **12–17%** — the observed 33% was above that range.
 
-Invitaciones formales enviadas por clientes para participar en una oportunidad antes de que el freelancer envíe una propuesta.
+### Interpretation
 
-**Impressions**
+Visibility was not the only problem: proposals were reaching clients and being viewed. The next thing to investigate was **what happens after the client views the proposal**, which led to a new hypothesis:
 
-Cantidad de veces que el perfil apareció frente a clientes mediante Profile Boost. Representa exposición asociada a la promoción del perfil.
+> **Could a personalized video improve client response?**
 
-**Clicks**
+### Initial recommendation
 
-Interacciones realizadas sobre el perfil promocionado. Upwork también registra acciones como guardar el perfil, invitar o contratar desde el anuncio.
-
-**Conversion Rate**
-
-Relación entre contratos obtenidos y visitas al perfil.
-
-**Conversion Rate = Contratos / Profile Views**
-
-### Resultados
-
-Entre mayo y agosto se registraron:
-
-- **25 contratos**.
-- Promedio de **6,25 contratos/mes**.
-- Agosto alcanzó **9 contratos en 25 días**.
-
-### Comparación de escenarios
-
-#### Abril — Boost sin Badge
-
-- ~**350 impresiones**
-- ~**90 visitas**
-- **1 contrato**
-
-#### Junio y julio — Badge sin Boost
-
-- ~**100–145 visitas mensuales**
-- **5 contratos por mes**
-- **0 impresiones pagadas**
-
-#### Agosto — Badge + Boost
-
-- ~**180 impresiones**
-- **145 visitas**
-- **9 contratos en 25 días**
-
-### Hallazgo clave
-
-Los resultados sugieren que ambas herramientas cumplen funciones diferentes dentro del funnel:
-
-**Profile Boost → Atracción**
-
-Aumenta la exposición del perfil y genera oportunidades de interacción.
-
-**Availability Badge → Señal de disponibilidad**
-
-Refuerza frente al cliente que el freelancer se encuentra disponible para trabajar.
-
-La combinación de ambas herramientas produjo el **mayor volumen de contratos observado**, con **9 contratos en 25 días**.
-
-### Conclusión
-
-Los datos sugieren que la estrategia más efectiva observada fue combinar **exposición + disponibilidad**, especialmente cuando existe capacidad para absorber una mayor demanda.
+Test personalized **30–60 second videos**, tailored to each client, as an alternative to text-only proposals.
 
 ---
 
-# 4. Video personalizado — Validación de la hipótesis de conversión
+## 3. Availability Badge + Profile Boost — From Traffic to Conversion
 
-### Problema
+### Problem
 
-El análisis anterior planteó que el video personalizado podía ser una herramienta para mejorar la conversión de propuestas.
+> **How do Upwork's acquisition tools interact with contract generation?**
 
-El siguiente paso fue comprobar si los contratos obtenidos después de esa recomendación realmente estaban asociados al uso de videos personalizados.
+The goal was to analyze the **Availability Badge** and **Profile Boost** together, separating exposure, visits and conversions.
 
-### Método
+### Metrics
 
-Se realizó una auditoría manual de los chats correspondientes a **6 clientes** con contratos iniciados o completados.
+| Metric | Definition |
+|---|---|
+| **Profile Views** | People who opened and reviewed the profile (organic + boosted traffic). |
+| **Invitations** | Formal invites from clients to apply to a job before the freelancer sends a proposal. |
+| **Impressions** | Times the profile was shown to clients through Profile Boost. |
+| **Clicks** | Interactions with the boosted profile (Upwork also tracks saves, invites and hires from the ad). |
+| **Conversion Rate** | Contracts / Profile Views. |
 
-Cada caso fue clasificado según:
+### Results
 
-- Origen del contacto: **Inbound / Outbound / Invite**.
-- Existencia de video personalizado en el primer contacto.
-- Forma en que se inició la conversación.
-- Evolución del contacto hasta el contrato.
+Between May and August: **25 contracts**, an average of **6.25 contracts/month**. August reached **9 contracts in 25 days**.
 
-### Resultado del muestreo
+| Scenario | Impressions | Profile Views | Contracts |
+|---|---|---|---|
+| April — Boost, no Badge | ~350 | ~90 | 1 |
+| June–July — Badge, no Boost | 0 paid | ~100–145 / month | 5 / month |
+| August — Badge + Boost | ~180 | 145 | 9 in 25 days |
 
-De los **6 clientes auditados**:
+### Key finding
 
-- **0** tuvieron un video personalizado en el primer contacto.
-- **4** llegaron mediante contacto **Inbound**.
-- **1** correspondió a **Outbound**.
-- **1** correspondió a una **Invite**.
+The two tools play different roles in the funnel:
 
-En varios casos, los propios clientes indicaron que el perfil o contenido había llamado su atención antes de iniciar la conversación.
+- **Profile Boost → Attraction:** increases exposure and creates interaction opportunities.
+- **Availability Badge → Availability signal:** tells clients the freelancer is ready to work.
 
-### Hallazgo analítico
-
-La muestra **no proporciona evidencia suficiente para afirmar que el video personalizado fue el factor que convirtió las propuestas en contratos**.
-
-En cambio, los casos analizados mostraron un patrón diferente:
-
-**Perfil optimizado → Cliente descubre el perfil → Contacto inbound → Respuesta rápida → Negociación → Contrato**
-
-### Conclusión
-
-El análisis permitió revisar la hipótesis inicial.
-
-En los casos auditados, la conversión estuvo más directamente asociada al **posicionamiento del perfil, la generación de leads inbound y la velocidad de respuesta y negociación** que al uso de un video personalizado.
-
-El video continúa siendo una táctica válida para experimentar en propuestas outbound, pero **su impacto no puede considerarse demostrado a partir de esta muestra**.
-
+Combining **exposure + availability** produced the highest contract volume observed, especially when there is capacity to absorb more demand.
 
 ---
 
-# Conclusiones generales
+## 4. Personalized Video — Testing the Conversion Hypothesis
 
-Los análisis realizados permiten construir una visión progresiva del funnel de adquisición y conversión en Upwork:
+### Problem
+
+Section 2 suggested personalized video as a way to improve proposal conversion. The next step was to check whether the contracts won afterwards were actually associated with personalized videos.
+
+### Method
+
+A manual audit of the chats with **6 clients** with started or completed contracts. Each case was classified by:
+
+- Contact origin: **Inbound / Outbound / Invite**.
+- Whether a personalized video was used in the first contact.
+- How the conversation started and evolved into a contract.
+
+### Results
+
+Of the **6 audited clients**:
+
+- **0** received a personalized video in the first contact.
+- **4** came through **Inbound** contact, **1** through **Outbound**, **1** through an **Invite**.
+
+In several cases, the clients themselves said the profile or content caught their attention before they reached out.
+
+### Analytical finding
+
+The sample **does not provide enough evidence to say personalized video converted proposals into contracts**. The cases showed a different pattern instead:
+
+**Optimized profile → Client discovers the profile → Inbound contact → Fast reply → Negotiation → Contract**
+
+### Conclusion
+
+The initial hypothesis was revised. In the audited cases, conversion was more directly associated with **profile positioning, inbound lead generation and response/negotiation speed** than with personalized video. Video is still a valid tactic to test in outbound proposals, but **its impact is not demonstrated by this sample**.
+
+---
+
+## Overall Conclusions
 
 ```
-EXPOSICIÓN
+EXPOSURE
+    ↓  Profile Boost
+PROFILE VISIT
+    ↓  Availability Badge + Portfolio
+CONTACT / INVITATION
     ↓
-Profile Boost
+REPLY & NEGOTIATION
     ↓
-VISITA AL PERFIL
-    ↓
-Availability Badge + Portfolio
-    ↓
-CONTACTO / INVITACIÓN
-    ↓
-RESPUESTA Y NEGOCIACIÓN
-    ↓
-CONTRATO
-```
-# Principales aprendizajes
-
-### 1. La visibilidad por sí sola no garantiza conversiones
-
-El **Profile Boost** puede aumentar la exposición del perfil, pero una mayor cantidad de impresiones no implica necesariamente un mayor número de contratos.
-
-### 2. La Availability Badge mostró una fuerte asociación con la recuperación del volumen
-
-Después de registrar **1 contrato** en abril, se obtuvieron **25 contratos entre mayo y agosto**, con un promedio de **6,25 contratos/mes**.
-
-### 3. La combinación de herramientas produjo el mejor resultado observado
-
-La combinación **Badge + Boost** alcanzó **9 contratos en 25 días** durante agosto, el mayor volumen observado en el período analizado.
-
-### 4. El cuello de botella no estaba necesariamente en la visibilidad
-
-El análisis de propuestas mostró que el **33%** de las propuestas activas analizadas fueron vistas pero no respondidas.
-
-Esto llevó a investigar qué ocurría después de que el cliente veía la propuesta.
-
-### 5. Las hipótesis deben validarse con datos reales
-
-La hipótesis de que el **video personalizado** podía mejorar la conversión fue contrastada mediante una auditoría de conversaciones.
-
-De los **6 clientes auditados**, **0** tuvieron un video personalizado en el primer contacto.
-
-Por lo tanto, los datos disponibles **no permiten afirmar que el video personalizado haya sido el factor determinante de conversión**.
-
----
-
-# Herramientas utilizadas
-
-UGCAnalitica fue desarrollado con asistencia de distintas herramientas de **Inteligencia Artificial**, principalmente:
-
-- **ChatGPT**
-- **Google Gemini**
-- **DeepSeek**
-
-Las herramientas de IA fueron utilizadas como apoyo para **procesar, explorar e interpretar datos, contrastar hipótesis y estructurar el análisis**.
-
-> **Importante:** en esta etapa del proyecto no se utilizaron Python, SQL, PostgreSQL, Power BI ni otras herramientas tradicionales de análisis para procesar los datos.
-
-### ¿Por qué trabajar de esta manera?
-
-UGCAnalitica fue mi **primer proyecto real con datos reales y un cliente real**.
-
-Antes de concentrarme en aprender herramientas técnicas, quise entender una cuestión más fundamental:
-
-> **¿Cómo piensa un analista de datos y cómo genera valor a partir de los datos?**
-
-Por eso, el foco inicial estuvo puesto en desarrollar habilidades de razonamiento analítico:
-
-- Identificar problemas de negocio.
-- Formular preguntas relevantes.
-- Construir hipótesis.
-- Buscar y organizar evidencia.
-- Interpretar métricas.
-- Detectar patrones.
-- Cuestionar las hipótesis iniciales.
-- Transformar los resultados en decisiones.
-
-Las herramientas técnicas serán incorporadas progresivamente para **mi próximo proyecto de insight usando SQL, PYTHON, POWER BI Y GOOGLE SHEETS**.
-
----
-
-# Enfoque del proyecto
-
-UGCAnalitica no busca únicamente mostrar gráficos o métricas.
-
-El objetivo es demostrar un proceso de **análisis de datos aplicado a una problemática comercial real**.
-
-La idea central del proyecto es:
-
-> **El valor del análisis no está únicamente en la herramienta utilizada, sino en la capacidad de convertir datos en mejores decisiones.**
-
-Cada insight parte de un problema concreto y busca responder una pregunta mediante evidencia:
-
-```text
-
-PROBLEMA
-   ↓
-PREGUNTA
-   ↓
-HIPÓTESIS
-   ↓
-DATOS
-   ↓
-ANÁLISIS
-   ↓
-INSIGHT
-   ↓
-DECISIÓN
-
+CONTRACT
 ```
 
-Este proyecto representa mi primera etapa de aprendizaje:
+### Key learnings
 
-Primero aprender a pensar como analista.
-Después aprender a automatizar ese pensamiento con herramientas técnicas.
-
----
-# Estado del proyecto
-
-En desarrollo.
-
-UGCAnalitica continúa evolucionando a medida que se incorporan nuevos datos, se validan hipótesis anteriores y se profundiza en el análisis del comportamiento del perfil y las oportunidades dentro de Upwork.
+1. **Visibility alone does not guarantee conversions.** More impressions from Profile Boost did not necessarily mean more contracts.
+2. **The Availability Badge was strongly associated with recovering volume.** After 1 contract in April, there were 25 contracts between May and August (6.25/month on average).
+3. **Combining tools produced the best result observed:** Badge + Boost reached 9 contracts in 25 days in August.
+4. **The bottleneck was not necessarily visibility.** 33% of the active proposals analyzed were viewed but not answered.
+5. **Hypotheses must be validated with real data.** The personalized-video hypothesis was tested with a chat audit and was not supported by the sample (0 of 6).
 
 ---
-# 🚀 Evolución del Proyecto: De la Hipótesis a la Ingeniería de Datos
 
-Este proyecto nació como un análisis conceptual para validar hipótesis de negocio sobre el rendimiento de un freelancer en Upwork. Tras definir los KPIs y la lógica comercial, el proyecto evoluciona hacia una solución de* **Analytics Engineering** *para consolidar mi perfil profesional. Actualmente estoy implementando un pipeline técnico end-to-end (Bronze ➔ Silver ➔ Gold) para transformar datos crudos en data marts gobernados con Python, SQL y dbt.
+## How this phase was done
+
+This phase was built with the help of AI tools (**ChatGPT, Google Gemini and DeepSeek**) to process, explore and interpret data, test hypotheses and structure the analysis.
+
+> **Note:** this phase did not use Python, SQL, PostgreSQL, Power BI or other traditional analysis tools to process the data.
+
+The focus was on analytical reasoning skills: identifying business problems, asking the right questions, building and challenging hypotheses, interpreting metrics, and turning results into decisions.
+
+**First learn to think like an analyst. Then automate that thinking with technical tools.**
+
+---
+
+## What came next
+
+After defining the KPIs and business logic here, the project evolved into an **Analytics Engineering** solution: an end-to-end pipeline with dbt that turns raw exports into a governed star schema. See the [main README](../../README.md).
